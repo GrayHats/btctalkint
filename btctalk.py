@@ -17,6 +17,17 @@ print """
 
 if len(sys.argv) > 1:
   uid = sys.argv[1]
+
+  profile = "https://bitcointalk.org/index.php?action=profile;u=" + uid
+  profilepage = requests.get(profile)
+  ptree = html.fromstring(profilepage.content)
+  pdata = ptree.xpath("//td[@class='windowbg']/table/tr/td/text()")
+  print '[USER]', pdata[0]
+  print ' - (activity)', pdata[2]
+  print ' - (rank)', pdata[3]
+  print ' - (registered)', pdata[4]
+  print ' - (address)', pdata[9]
+
   url = "https://bitcointalk.org/index.php?action=profile;u=" + uid + ";sa=statPanel"
   page = requests.get(url)
   tree = html.fromstring(page.content)
@@ -37,6 +48,7 @@ if len(sys.argv) > 1:
   print '[BOARDS]'
   for i in range(len(pboards)):
     print ' +', pboards_perc[i], "", pboards[i]
+
 else:
   print """
   usage: python btctalk.py {UID}

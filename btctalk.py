@@ -23,6 +23,7 @@ if len(sys.argv) > 1:
   ptree = html.fromstring(profilepage.content)
   pdata = ptree.xpath("//td[@class='windowbg']/table/tr/td/text()")
   print '[USER]', pdata[0]
+  print ' - (posts)', pdata[1]
   print ' - (activity)', pdata[2]
   print ' - (rank)', pdata[3]
   print ' - (registered)', pdata[4]

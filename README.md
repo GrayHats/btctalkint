@@ -16,6 +16,12 @@
 pip install lxml
 ```
 
+or
+
+```
+pip install -r requirements.txt
+```
+
 
 ### output
 ```

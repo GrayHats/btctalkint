@@ -25,9 +25,12 @@ if len(sys.argv) > 1:
   print ('[USER]', pdata[0])
   print (' - (posts)', pdata[1])
   print (' - (activity)', pdata[2])
-  print (' - (rank)', pdata[3])
-  print (' - (registered)', pdata[4])
-  print (' - (address)', pdata[9])
+  print (' - (merit)', pdata[3])
+  print (' - (rank)', pdata[4])
+  print (' - (registered)', pdata[5])
+  print (' - (address)', pdata[11])
+  print (' - (location)', pdata[14])
+  print (' - (localtime)', pdata[15])
 
   url = "https://bitcointalk.org/index.php?action=profile;u=" + uid + ";sa=statPanel"
   page = requests.get(url)

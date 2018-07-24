@@ -22,6 +22,8 @@ or
 pip install -r requirements.txt
 ```
 
+### update
+cause data leak, user stat now is disabled
 
 ### output
 ```
